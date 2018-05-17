@@ -1,9 +1,47 @@
 ---
 layout: default
-title: Home
+title: Blog
 ---
 
-<div class="hero">
-  <img src="{{ site.baseurl }}{{ site.hero.image }}" />
-  <p>{{ site.hero.caption }}</p>
+<div class="posts">
+  {% for post in paginator.posts %}
+    <div class="post">
+      <h1 class="post-title">
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h1>
+
+      <span class="post-date">{{ post.date | date_to_string }}</span>
+      {% if post.tags %} |
+      {% for tag in post.tags %}
+      <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+      {% endfor %}
+      {% endif %}
+
+      <article>
+        {{ post.excerpt | markdownify }}
+      <article>
+      <div class="post-more">
+        {% if site.disqus_short_name %}
+        <a href="{{ site.baseurl }}{{ post.url }}#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<hr />
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+  {% else %}
+    <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% else %}
+    <span class="next ">Next</span>
+  {% endif %}
 </div>

@@ -42,10 +42,11 @@
       padding: 0;
       li {
         @include transition(all .1s ease-in-out);
+        opacity: 0.8;
         padding: 0 1rem;
         &:hover {
           list-style-type: disc;
-          padding: 0 .5rem;
+          opacity: 1;
         }
       }
     }

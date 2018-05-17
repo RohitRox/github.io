@@ -103,6 +103,7 @@ a.sidebar-nav-item:focus {
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
   position: absolute;
+  text-align: center;
   top:  .8rem;
   @if $reverse-layout {
     left: auto;
@@ -112,32 +113,29 @@ a.sidebar-nav-item:focus {
     right: auto;
   }
   display: block;
-  padding: .25rem .75rem;
-  color: $theme-color;
-  background-color: $white;
-  border-radius: .25rem;
+  padding: .25rem;
   cursor: pointer;
 }
 
 .sidebar-toggle:before {
   display: inline-block;
-  width: 1rem;
-  height: .75rem;
-  content: "";
-  @include background-image(linear-gradient(to bottom, $theme-color-dark, $theme-color-dark 20%, $white 20%, $white 40%, $theme-color-dark 40%, $theme-color-dark 60%, $white 60%, $white 80%, $theme-color-dark 80%, $theme-color-dark 100%));
+  width: 32px;
+  height: 32px;
+  content: "\f0c9";
+  font-family: FontAwesome;
 }
 
-.sidebar-toggle:active,
-#sidebar-checkbox:focus ~ .sidebar-toggle,
-#sidebar-checkbox:checked ~ .sidebar-toggle {
-  color: $white;
-  background-color: $theme-color;
-}
+// .sidebar-toggle:active,
+// #sidebar-checkbox:focus ~ .sidebar-toggle,
+// #sidebar-checkbox:checked ~ .sidebar-toggle {
+//   color: $white;
+//   background-color: $theme-color;
+// }
 
 .sidebar-toggle:active:before,
 #sidebar-checkbox:focus ~ .sidebar-toggle:before,
 #sidebar-checkbox:checked ~ .sidebar-toggle:before {
-  @include background-image(linear-gradient(to bottom, $white, $white 20%, $theme-color-dark 20%, $theme-color-dark 40%, $white 40%, $white 60%, $theme-color-dark 60%, $theme-color-dark 80%, $white 80%, $white 100%));
+  content: "\f00d";
 }
 
 @media (min-width: 30.1em) {
@@ -194,9 +192,6 @@ a.sidebar-nav-item:focus {
 
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   @include transform(translateX(if($reverse-layout, -14rem, 14rem)));
-  @if $overlay-sidebar {
-    box-shadow: 0 0 0 .25rem $white;
-  }
 }
 
 .sidebar-personal-info {
@@ -209,5 +204,8 @@ a.sidebar-nav-item:focus {
       color: $white;
       text-decoration: none;
     }
+  }
+  .sidebar-personal-info-name {
+    color: #fafafa;
   }
 }

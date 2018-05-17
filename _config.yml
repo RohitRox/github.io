@@ -1,11 +1,10 @@
 # Site Info
-title: Jistol Github Page
-tagline: 'A Jekyll theme based on Lanyon'
-description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
+title: Blog @ RohitRox
+tagline: Blog @ RohitRox
+description: RohitRox's Tech blog
 baseurl: ""
-# url: http://codinfox.github.io
-logo: '/public/logo.png'
-
+url: "http://rohitrox.github.io"
+lang: en
 # Site configurations
 gems:
   - jekyll-paginate
@@ -16,51 +15,40 @@ excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
   sass_dir: _scss
+
 paginate: 5
-paginate_path: '/blog/page:num'
-permalink: pretty
+
+permalink: /:year/:month/:day/:title/
 
 version: 1.0.0
 
 # About/contact
 author:
-  name: 김지환
-  description: 열심히 공부하는 개발자.
-  gravatar: 034519c72194a93612b79ac8dc273424 # md5 hash of your email address
+  name: Rohit Joshi
+  description: Full Stack Software Developer
   contact:
-    # linkedin:  https://www.linkedin.com/in/lizhihao
-    github:    https://github.com/jistol
-    facebook:  https://www.facebook.com/jistol.kim
-    #twitter:   https://twitter.com/Li_Zhihao
-    #weibo:     http://weibo.com/41173780
-    email:     http://www.google.com/recaptcha/mailhide/d?k=019csu4eVzJbvc1nXWueVk-w==&c=ZGJUNb6dJ6dwB9T34n_MZ0U5i2OntxTAksH_KpBdN2E=
+    linkedin:  https://www.linkedin.com/in/rohitrox
+    github:    https://github.com/rohitrox
+    twitter:   https://twitter.com/roxxypoxxy
+    email:
 
 # Navigation (2nd level links supported)
 nav:
   Home:
     - '/'
-  Post:
-    - '/blog/'
   Categories:
-    - '/blog/categories/'
+    - '/categories/'
   Tags:
-    - '/blog/tags/'
+    - '/tags/'
   About:
     - '/about/'
-  Github Project:
-    - 'https://github.com/jistol'
-
 
 # Where are tags and categories displayed
-tag_page: '/blog/tags/'
-category_page: '/blog/categories/'
-
-hero:
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
-
+tag_page: '/tags/'
+category_page: '/categories/'
 # Puglins
 mathjax: true # whether support mathjax
-google_analytics_token: 'UA-89877408-1' # leave blank if you don't want google analytics
-naver_analytics_token: '1293c760f8c51'
-disqus_short_name: 'jistol-github-io' # leave blank if you don't want disqus
+# leave blank if you don't want google analytics
+google_analytics_token:
+naver_analytics_token:
+disqus_short_name: 'webdevelopmentlog' # leave blank if you don't want disqus

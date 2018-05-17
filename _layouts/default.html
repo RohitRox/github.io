@@ -13,10 +13,16 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
-              <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/>
-            </a>
-            <small>{{ site.tagline }}</small>
+            {% if site.logo %}
+              <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
+                <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/>
+                <small>{{ site.tagline }}</small>
+              </a>
+            {% else  %}
+              <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}" class="masthead-tagline-link">
+                {{ site.tagline }}
+              </a>
+            {% endif %}
           </h3>
         </div>
       </div>
