@@ -6,7 +6,7 @@ baseurl: ""
 url: "http://rohitrox.github.io"
 lang: en
 # Site configurations
-gems:
+plugins:
   - jekyll-paginate
 markdown: kramdown
 kramdown:
